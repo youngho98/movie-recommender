@@ -3,6 +3,7 @@ __pycache__/
 .Python
 venv/
 .env
+test_db/
 chroma_db/
 *.log
 .DS_Store
