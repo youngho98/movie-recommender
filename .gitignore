@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+.Python
+venv/
+.env
+chroma_db/
+*.log
+.DS_Store
+project.md
+todo.md
