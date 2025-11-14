@@ -128,13 +128,14 @@ def show_profile_sidebar() -> None:
         st.rerun()
 
 
-def display_movie_card(movie: Dict, idx: int) -> None:
+def display_movie_card(movie: Dict, idx: int, message_idx: int = 0) -> None:
     """
     영화 정보를 카드 형식으로 표시합니다.
 
     Args:
         movie: 영화 정보 딕셔너리
         idx: 영화 인덱스 (1부터 시작)
+        message_idx: 메시지 인덱스 (고유 키 생성용)
     """
     with st.container():
         st.markdown(f"### {idx}. {movie.get('title', 'Unknown')}")
@@ -182,20 +183,21 @@ def display_movie_card(movie: Dict, idx: int) -> None:
                     overview_short = overview
                 st.markdown(f"📝 **줄거리**: {overview_short}")
 
-            # 좋아요/싫어요 버튼
+            # 좋아요/싫어요 버튼 (고유 키 생성)
             col_like, col_dislike = st.columns(2)
 
             movie_id = movie.get("movie_id")
+            unique_key = f"{message_idx}_{movie_id}_{idx}"
 
             with col_like:
-                if st.button(f"👍 좋아요", key=f"like_{movie_id}_{idx}"):
+                if st.button(f"👍 좋아요", key=f"like_{unique_key}"):
                     if movie_id not in st.session_state.user_profile.get("liked_movies", []):
                         st.session_state.user_profile["liked_movies"].append(movie_id)
                         st.success("좋아요를 추가했습니다!")
                         st.rerun()
 
             with col_dislike:
-                if st.button(f"👎 싫어요", key=f"dislike_{movie_id}_{idx}"):
+                if st.button(f"👎 싫어요", key=f"dislike_{unique_key}"):
                     if movie_id not in st.session_state.user_profile.get("disliked_movies", []):
                         st.session_state.user_profile["disliked_movies"].append(movie_id)
                         st.info("싫어요를 추가했습니다.")
@@ -313,7 +315,7 @@ def main() -> None:
         st.subheader("💬 대화")
 
         # 대화 히스토리 표시
-        for message in st.session_state.messages:
+        for msg_idx, message in enumerate(st.session_state.messages):
             role = message["role"]
             content = message["content"]
             movies = message.get("movies", [])
@@ -326,7 +328,7 @@ def main() -> None:
                     st.markdown("---")
                     st.markdown("### 🎥 추천 영화")
                     for idx, movie in enumerate(movies, 1):
-                        display_movie_card(movie, idx)
+                        display_movie_card(movie, idx, msg_idx)
 
         # 입력창
         user_input = st.chat_input("영화를 검색하거나 추천받으세요...")
@@ -378,8 +380,10 @@ def main() -> None:
                         if final_movies:
                             st.markdown("---")
                             st.markdown("### 🎥 추천 영화")
+                            # 현재 메시지 인덱스 (히스토리 + 새 메시지)
+                            current_msg_idx = len(st.session_state.messages)
                             for idx, movie in enumerate(final_movies, 1):
-                                display_movie_card(movie, idx)
+                                display_movie_card(movie, idx, current_msg_idx)
 
                             # 메시지에 저장
                             st.session_state.messages.append({
