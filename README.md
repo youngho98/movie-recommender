@@ -97,7 +97,7 @@ graph TD
 
 ```bash
 # 저장소 클론
-git clone https://github.com/yourusername/movie-recommender.git
+git clone https://github.com/youngho98/movie-recommender.git
 cd movie-recommender
 
 # 가상환경 생성 (선택사항)
@@ -172,6 +172,8 @@ streamlit run app.py
 2. 추천 받은 영화에 좋아요/싫어요 클릭
 
 3. 사이드바에서 학습된 취향 확인
+
+<img width="1710" height="951" alt="스크린샷 2025-11-15 오후 7 07 48" src="https://github.com/user-attachments/assets/228ae17a-0589-4b35-885e-2a88091d02aa" />
 
 ## 📂 프로젝트 구조
 
