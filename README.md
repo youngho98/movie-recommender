@@ -173,7 +173,14 @@ streamlit run app.py
 
 3. 사이드바에서 학습된 취향 확인
 
-<img width="1710" height="951" alt="스크린샷 2025-11-15 오후 7 07 48" src="https://github.com/user-attachments/assets/228ae17a-0589-4b35-885e-2a88091d02aa" />
+4. langsmith에서 llm 모니터링도 가능 (.env 파일에 langsmith api key 입력 필요)
+
+<img width="1710" height="939" alt="스크린샷 2025-11-16 오후 1 33 29" src="https://github.com/user-attachments/assets/d7a13951-7f0c-442c-ba6c-783e302a91e2" />
+<img width="1710" height="959" alt="스크린샷 2025-11-16 오후 1 35 24" src="https://github.com/user-attachments/assets/a3f58dae-cd60-46df-81f6-27494af81575" />
+<img width="1710" height="956" alt="스크린샷 2025-11-16 오후 1 36 28" src="https://github.com/user-attachments/assets/6f789122-7ac8-4924-a7fb-ae8d7e9890ed" />
+<img width="1710" height="956" alt="스크린샷 2025-11-16 오후 1 36 54" src="https://github.com/user-attachments/assets/8a841e9d-b037-4eec-9387-9d64b27d93ee" />
+<img width="1710" height="975" alt="스크린샷 2025-11-16 오후 1 39 31" src="https://github.com/user-attachments/assets/54da0b26-89a6-4f29-b38d-39eb8cf081be" />
+<img width="1709" height="976" alt="스크린샷 2025-11-16 오후 1 39 54" src="https://github.com/user-attachments/assets/e0fc3041-006f-4638-9faa-627b5b393126" />
 
 ## 📂 프로젝트 구조
 
