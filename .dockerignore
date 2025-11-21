@@ -1,0 +1,47 @@
+# Git
+.git/
+.gitignore
+
+# 환경 변수
+.env
+
+# 가상환경
+venv/
+env/
+ENV/
+
+# Python 캐시
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+
+# OS
+.DS_Store
+Thumbs.db
+
+# 데이터베이스 (볼륨으로 마운트)
+chroma_db/
+test_db/
+
+# 로그
+*.log
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# 문서
+project.md
+todo.md
+deploy_guide.md
+README.md
+claude.md
+
+# 서버 설정
+nginx.conf
