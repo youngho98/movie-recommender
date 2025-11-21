@@ -26,7 +26,7 @@
 - **Streamlit**: 대화형 웹 인터페이스
 
 ### 개발 도구
-- **Python 3.10+**
+- **Python 3.11+**
 - **Claude Code**: AI 페어 프로그래밍
 
 ## 🌟 주요 특징
@@ -88,7 +88,7 @@ graph TD
 
 ### 1. 요구사항
 
-- **Python**: 3.10 이상
+- **Python**: 3.11 이상
 - **API 키**:
   - [OpenAI API 키](https://platform.openai.com/api-keys)
   - [TMDB API 키](https://www.themoviedb.org/settings/api)
