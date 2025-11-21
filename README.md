@@ -182,6 +182,50 @@ streamlit run app.py
 <img width="1710" height="975" alt="스크린샷 2025-11-16 오후 1 39 31" src="https://github.com/user-attachments/assets/54da0b26-89a6-4f29-b38d-39eb8cf081be" />
 <img width="1709" height="976" alt="스크린샷 2025-11-16 오후 1 39 54" src="https://github.com/user-attachments/assets/e0fc3041-006f-4638-9faa-627b5b393126" />
 
+## 🚀 배포
+
+### 라이브 데모
+🔗 **https://movie.youngho.me**
+
+- SSL 인증 (Let's Encrypt)
+- 24/7 가동 (필요시)
+- AWS 서울 리전
+
+### 배포 환경
+- **클라우드**: AWS EC2 (t3.small)
+- **OS**: Ubuntu 24.04 LTS
+- **컨테이너**: Docker + Docker Compose
+- **웹서버**: Nginx (리버스 프록시)
+- **SSL**: Let's Encrypt (자동 갱신)
+- **스토리지**: 30GB EBS gp3
+- **도메인**: movie.youngho.me
+
+### 아키텍처
+```
+사용자
+  ↓ HTTPS:443
+Nginx (SSL 종료, 리버스 프록시)
+  ↓ HTTP:8501
+Docker Container
+  └─ Streamlit App
+      ├─ LangGraph Agent
+      ├─ ChromaDB (RAG)
+      └─ OpenAI API
+```
+
+### 시스템 스펙
+- **CPU**: 2 vCPU (t3.small)
+- **메모리**: 2GB RAM
+- **스토리지**: 30GB (증설 가능)
+- **네트워크**: 고정 IP (탄력적 IP)
+
+### 주요 특징
+- ✅ HTTPS 보안 연결
+- ✅ 도커 컨테이너 격리
+- ✅ 자동 SSL 인증서 갱신
+- ✅ 무중단 재시작 (restart policy)
+- ✅ 헬스체크 기능
+
 ## 📂 프로젝트 구조
 
 ```
