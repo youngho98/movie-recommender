@@ -2,6 +2,8 @@
 
 > LangGraph와 RAG를 활용한 지능형 하이브리드 영화 추천 Agent
 
+🔗 **https://movie.youngho.me**
+
 대화형 AI가 사용자 취향을 학습하여 TMDB API와 벡터 검색을 결합한 개인화된 영화를 추천합니다.
 
 ## ✨ 주요 기능
@@ -183,13 +185,6 @@ streamlit run app.py
 <img width="1709" height="976" alt="스크린샷 2025-11-16 오후 1 39 54" src="https://github.com/user-attachments/assets/e0fc3041-006f-4638-9faa-627b5b393126" />
 
 ## 🚀 배포
-
-### 라이브 데모
-🔗 **https://movie.youngho.me**
-
-- SSL 인증 (Let's Encrypt)
-- 24/7 가동 (필요시)
-- AWS 서울 리전
 
 ### 배포 환경
 - **클라우드**: AWS EC2 (t3.small)
